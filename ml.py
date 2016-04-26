@@ -1,8 +1,8 @@
 import graphlab as gl
 import math
 
-target_feature = "response" # sample target feature
-data_source = 'balanced_response_prediction_task.csv' # sample data source file
+target_feature = "target" # sample target feature
+data_source = 'file.csv' # sample data source file
 def get_data(source, dropna = False):
 	# Load the dataset
 	_data = gl.SFrame(source)
@@ -46,7 +46,7 @@ def mutual_information(a, b):
 
 #### Sample data code ####
 data = get_data(data_source, dropna = True)
-train_data, test_data, validation_data = split_data(data, [0.7, 0.2, 0.1])
+train_data, test_data, validation_data = split_data(data, [0.7, 0.2, 0.1]) # just choose any ratio
 #### End sample data code ####
 
 # strategy can be greedy, logit or mui
